@@ -183,7 +183,7 @@ struct ContentView: View {
                 Button {
                     location.stop(); duration = Date().timeIntervalSince(startedAt); stage = .drawing
                 } label: {
-                    Image(systemName: "stop").font(.system(size: 30, weight: .medium)).foregroundStyle(.black).frame(width: 62, height: 62).background(coral, in: RoundedRectangle(cornerRadius: 4))
+                    Image(systemName: "stop.fill").font(.system(size: 28, weight: .medium)).foregroundStyle(.black).frame(width: 62, height: 62).background(coral, in: Circle())
                 }.accessibilityLabel("散歩を終了").position(x: geo.size.width/2, y: geo.size.height*2/3)
             }
         }
@@ -202,7 +202,7 @@ struct ContentView: View {
                         let point = CGPoint(x: min(1,max(0,value.location.x/geo.size.width)), y: min(1,max(0,value.location.y/geo.size.height)))
                         if erasing {
                             if !eraseStarted { undoHistory.append(strokes); redoHistory = []; eraseStarted = true }
-                            strokes.removeAll { $0.touches(point, in: geo.size, radius: 20) }
+                            strokes = erase(point: point, from: strokes, in: geo.size)
                         } else {
                             if current == nil { current = InkStroke(points: [], color: ink) }
                             current?.points.append(point)
@@ -218,7 +218,7 @@ struct ContentView: View {
                         Button { ink = index; erasing = false } label: { Circle().fill(palette[index]).frame(width: 28, height: 28).padding(3).overlay(Circle().stroke(ink == index && !erasing ? .black : .clear, lineWidth: 2)) }.accessibilityLabel(["赤", "オレンジ", "黄", "緑", "青", "紫", "茶", "黒"][index])
                     }
                 }.frame(width: 168)
-                Button { erasing.toggle() } label: { Image(systemName: "eraser").font(.title).foregroundStyle(.black).padding(8).background(erasing ? coral : .clear, in: RoundedRectangle(cornerRadius: 8)) }.accessibilityLabel("線を消す")
+                Button { erasing.toggle() } label: { Image(systemName: "eraser").font(.title).foregroundStyle(erasing ? coral : .black).padding(8) }.accessibilityLabel("線を消す")
             }
             Spacer(minLength: 0)
         }.padding(20)
@@ -235,6 +235,23 @@ struct ContentView: View {
     }
     private func doneButton(action: @escaping () -> Void) -> some View {
         Button(action: action) { Image(systemName: "checkmark").font(.title2).foregroundStyle(.black).frame(width: 44, height: 44).background(coral, in: Circle()) }.accessibilityLabel("完了")
+    }
+    private func erase(point: CGPoint, from source: [InkStroke], in size: CGSize) -> [InkStroke] {
+        var result: [InkStroke] = []
+        for stroke in source {
+            var segment: [CGPoint] = []
+            for p in stroke.points {
+                let pixel = CGPoint(x: p.x * size.width, y: p.y * size.height)
+                if hypot(pixel.x - point.x * size.width, pixel.y - point.y * size.height) <= 20 {
+                    if segment.count > 1 { result.append(InkStroke(points: segment, color: stroke.color)) }
+                    segment = []
+                } else {
+                    segment.append(p)
+                }
+            }
+            if segment.count > 1 { result.append(InkStroke(points: segment, color: stroke.color)) }
+        }
+        return result
     }
     private var bookView: some View {
         ScrollView {
@@ -344,5 +361,4 @@ struct LiveWalkMap: UIViewRepresentable {
         }
     }
 }
-
 
