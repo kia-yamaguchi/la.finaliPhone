@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F56CF90C30526AD700790419 /* LA_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LA_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56CF90C30526AD700790419 /* icon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56CF91930526ADD00790419 /* LA_finalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LA_finalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56CF92330526ADD00790419 /* LA_finalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LA_finalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		F56CF90D30526AD700790419 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F56CF90C30526AD700790419 /* LA_final.app */,
+				F56CF90C30526AD700790419 /* icon2.app */,
 				F56CF91930526ADD00790419 /* LA_finalTests.xctest */,
 				F56CF92330526ADD00790419 /* LA_finalUITests.xctest */,
 			);
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F56CF90B30526AD700790419 /* LA_final */ = {
+		F56CF90B30526AD700790419 /* icon2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F56CF92D30526ADD00790419 /* Build configuration list for PBXNativeTarget "LA_final" */;
+			buildConfigurationList = F56CF92D30526ADD00790419 /* Build configuration list for PBXNativeTarget "icon2" */;
 			buildPhases = (
 				F56CF90830526AD700790419 /* Sources */,
 				F56CF90930526AD700790419 /* Frameworks */,
@@ -110,11 +110,11 @@
 			fileSystemSynchronizedGroups = (
 				F56CF90E30526AD700790419 /* LA_final */,
 			);
-			name = LA_final;
+			name = icon2;
 			packageProductDependencies = (
 			);
 			productName = LA_final;
-			productReference = F56CF90C30526AD700790419 /* LA_final.app */;
+			productReference = F56CF90C30526AD700790419 /* icon2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F56CF91830526ADD00790419 /* LA_finalTests */ = {
@@ -200,7 +200,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F56CF90B30526AD700790419 /* LA_final */,
+				F56CF90B30526AD700790419 /* icon2 */,
 				F56CF91830526ADD00790419 /* LA_finalTests */,
 				F56CF92230526ADD00790419 /* LA_finalUITests */,
 			);
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		F56CF91B30526ADD00790419 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F56CF90B30526AD700790419 /* LA_final */;
+			target = F56CF90B30526AD700790419 /* icon2 */;
 			targetProxy = F56CF91A30526ADD00790419 /* PBXContainerItemProxy */;
 		};
 		F56CF92530526ADD00790419 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F56CF90B30526AD700790419 /* LA_final */;
+			target = F56CF90B30526AD700790419 /* icon2 */;
 			targetProxy = F56CF92430526ADD00790419 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -386,14 +386,18 @@
 		F56CF92E30526ADD00790419 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = icon2;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J6QCQ4C9L3;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LA-final-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ナニニミエル？";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -409,7 +413,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.yamaguchi.kia.LA-final";
+				PRODUCT_BUNDLE_IDENTIFIER = app.yamaguchi.kia.walkart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -428,14 +432,18 @@
 		F56CF92F30526ADD00790419 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = icon2;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J6QCQ4C9L3;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LA-final-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ナニニミエル？";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -451,7 +459,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.yamaguchi.kia.LA-final";
+				PRODUCT_BUNDLE_IDENTIFIER = app.yamaguchi.kia.walkart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -577,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F56CF92D30526ADD00790419 /* Build configuration list for PBXNativeTarget "LA_final" */ = {
+		F56CF92D30526ADD00790419 /* Build configuration list for PBXNativeTarget "icon2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F56CF92E30526ADD00790419 /* Debug */,
